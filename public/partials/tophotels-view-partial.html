@@ -1,0 +1,36 @@
+<div class="container">
+        <div class="row top-margin" >
+          <div class="col-md-12" ng-repeat='obj in getAllHotels'>
+            <div ng-if="obj.category===category" ng-class="{'view-hotels view-top-hotels':obj.category==='Top Hotels - World','view-hotels view-top-small-hotels':obj.category==='Top Small Hotels - World','view-hotels view-top-luxury-hotels':obj.category==='Top Luxury Hotels - World'}">
+              <div ng-if="obj.category===category" >
+                <div id='location'>
+                  <span class="hotel-name">{{obj.name}}</span><br/>
+                  <span id='hotel-location'>Location: {{obj.location}}</span>
+                </div>
+
+                <div class='view-hotels-button'>
+                  <button type="button" id='view-btn' class="btn" ng-class="{'top-hotels ':obj.category==='Top Hotels - World','top-small-hotels':obj.category==='Top Small Hotels - World','top-luxury-hotels':obj.category==='Top Luxury Hotels - World'}"ng-click='openLink(obj.link)'>View Details</button>
+
+                </div>
+              </div>
+              
+            </div>
+
+            <div ng-if="category==='ALL Hotels - World'" ng-class="{'view-hotels view-all':obj.category}">
+              <div ng-if="obj.category!==category" >
+                <div id='location'>
+                  <span class="hotel-name">{{obj.name}}</span><br/>
+                  <span id='hotel-location'>Location: {{obj.location}}</span>
+                </div>
+
+                <div class='view-hotels-button'>
+                  <button type="button" id='view-btn' class="btn" ng-class="{'all-hotels ':obj.category}"ng-click='openLink(obj.link)'>View Details</button>
+
+                </div>
+              </div>
+              
+            </div>
+
+          </div>
+        </div>  
+</div>
